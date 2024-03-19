@@ -1,8 +1,3 @@
-# The official OpenSky Network API
-
-This repository contains API client implementations for the OpenSky Network in
-Python and Java as well as the sources for the [documentation](https://openskynetwork.github.io/opensky-api/). By using the OpenSky API, you agree with our [terms of use](https://opensky-network.org/about/terms-of-use).
-
 
 
 ## Python API
@@ -45,64 +40,6 @@ will output something like this:
 }
 ```
 
-
-## Java API
-
-* Maven project (not yet in a public repository)
-* Uses [```OkHttp```](https://square.github.io/okhttp/) for HTTP requests
-
-### Installation
-
-For usage with Maven
-
-```
-mvn clean install
-```
-
-Add the following dependency to your project
-
-```
-<dependency>
-    <groupId>org.opensky</groupId>
-    <artifactId>opensky-api</artifactId>
-    <version>1.3.0</version>
-</dependency>
-```
-
-### Usage
-
-```
-OpenSkyStates states = new OpenSkyApi().getStates(0);
-System.out.println("Number of states: " + states.getStates().size());
-```
-
-### Using the API within Android Apps
-
-Build and install the OpenSky API in your local repository as described above.
-You can use it within your Android App by telling gradle to lookup the local repository and adding the dependencies.
-
-In build.gradle, add the following lines
-
-    dependencies {
-        /* do not delete the other entries, just add this one */
-        compile 'org.opensky:opensky-api:1.3.0'
-    }
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-
-Also note, that you need the [INTERNET permission](https://developer.android.com/training/basics/network-ops/connecting.html) in your manifest to use the API.
-
-### Running behind a Proxy
-
-If you need to use a proxy server, set the `http.proxyHost` and `http.proxyPort`
-flags when starting your application:
-
-```
-java -Dhttp.proxyHost=10.0.0.10 -Dhttp.proxyPort=9090 ...
-```
 
 ## Resources
 
